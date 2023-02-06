@@ -57,9 +57,13 @@ else if (resp == "2")
         while(!sr0.EndOfStream)
         {
             string? currentLine = sr0.ReadLine();
+            string[] lineArray = currentLine.Split(",");
+            DateTime currentWeek = DateTime.Parse(lineArray[0]);
+            Console.WriteLine("Week of {0:MMM}, {0:dd}, {0:yyyy}", currentWeek);
+            int[] stringData = Array.ConvertAll(lineArray[1].Split("|"), int.Parse);
+            Console.WriteLine(" Su Mo Tu We Th Fr Sa Tot Avg");
+            Console.WriteLine(" -- -- -- -- -- -- -- --- ---");
 
-            string currentWeek = currentLine.Split(",")[0];
-            Console.WriteLine(currentWeek);
         }
     }
 
