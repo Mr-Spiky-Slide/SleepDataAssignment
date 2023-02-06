@@ -64,9 +64,13 @@ else if (resp == "2")
             int[] sleepDataInt = Array.ConvertAll(dailySleepData, int.Parse);
             Console.WriteLine(" Su Mo Tu We Th Fr Sa Tot Avg");
             Console.WriteLine(" -- -- -- -- -- -- -- --- ---");
-            foreach(var day in dailySleepData){
-                Console.WriteLine(day.PadLeft(2));
+            Console.Write(" ");
+            foreach(var day in sleepDataInt){
+                Console.Write($"{day:D} ".PadLeft(3));
             }
+            Console.WriteLine();
+            Console.WriteLine();
+
         }
     }
 
