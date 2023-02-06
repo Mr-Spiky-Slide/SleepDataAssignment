@@ -60,12 +60,17 @@ else if (resp == "2")
             string[] lineArray = currentLine.Split(",");
             DateTime currentWeek = DateTime.Parse(lineArray[0]);
             Console.WriteLine("Week of {0:MMM}, {0:dd}, {0:yyyy}", currentWeek);
-            int[] stringData = Array.ConvertAll(lineArray[1].Split("|"), int.Parse);
+            string[] dailySleepData = lineArray[1].Split("|");
+            int[] sleepDataInt = Array.ConvertAll(dailySleepData, int.Parse);
             Console.WriteLine(" Su Mo Tu We Th Fr Sa Tot Avg");
             Console.WriteLine(" -- -- -- -- -- -- -- --- ---");
-
+            foreach(var day in dailySleepData){
+                Console.WriteLine(day.PadLeft(2));
+            }
         }
     }
 
 
 }
+
+
