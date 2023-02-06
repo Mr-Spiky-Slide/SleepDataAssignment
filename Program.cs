@@ -68,6 +68,8 @@ else if (resp == "2")
             foreach(var day in sleepDataInt){
                 Console.Write($"{day:D} ".PadLeft(3));
             }
+            Console.Write($" {sleepDataInt.Sum()} ");
+            Console.Write($"{sleepDataInt.Average():N1}");
             Console.WriteLine();
             Console.WriteLine();
 
